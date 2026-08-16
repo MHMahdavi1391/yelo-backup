@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>YELO Music</title>
+    
+    <!-- ===== Favicon ===== -->
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <link rel="apple-touch-icon" href="logo.jpg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container" id="app">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="logo-wrapper">
+                <img src="logo.jpg" alt="YELO" class="logo-img" loading="lazy">
+            </div>
+            <div class="search-wrapper">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search music or artist..." autocomplete="off">
+                    <button id="clearSearch" class="clear-btn" style="display: none;"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tabs -->
+    <div class="tabs" id="tabsContainer">
+        <button class="tab-btn active" data-tab="home">Home</button>
+        <button class="tab-btn" data-tab="artists">Artists</button>
+        <button class="tab-btn" data-tab="favorites">Favorites</button>
+    </div>
+
+    <!-- Song Grid -->
+    <section class="songs-section">
+        <div id="songGrid" class="song-grid"></div>
+        <div id="noResults" class="no-results" style="display: none;">
+            <i class="fas fa-music"></i>
+            <p>Nothing was found.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="logo.jpg" alt="YELO" class="footer-logo" loading="lazy">
+            <span>A subdivision of Lumen Technologies Co. (LTC)</span>
+        </div>
+        <a href="https://lt-c.iddns.ir" class="back-link">
+            <i class="fas fa-arrow-right"></i> back to LTC HUB
+        </a>
+    </footer>
+</div>
+
+<!-- ===== Mini Player (Glassmorphism) ===== -->
+<div class="mini-player" id="miniPlayer">
+    <div class="mini-player-inner">
+        <img src="" alt="cover" class="mini-cover" id="miniCover">
+        <div class="mini-info">
+            <div class="mini-title" id="miniTitle">-</div>
+            <div class="mini-artist" id="miniArtist">-</div>
+        </div>
+        <div class="mini-progress">
+            <span class="mini-time" id="miniCurrentTime">0:00</span>
+            <div class="mini-progress-bar" id="miniProgressBar">
+                <div class="mini-progress-fill" id="miniProgressFill"></div>
+            </div>
+            <span class="mini-time" id="miniTotalTime">0:00</span>
+        </div>
+        <div class="mini-controls">
+            <button class="mini-btn" id="miniPrev"><i class="fas fa-step-backward"></i></button>
+            <button class="mini-btn play-btn" id="miniPlay"><i class="fas fa-play"></i></button>
+            <button class="mini-btn" id="miniNext"><i class="fas fa-step-forward"></i></button>
+        </div>
+        <div class="mini-actions">
+            <button class="mini-btn like-btn" id="miniLike"><i class="fas fa-heart"></i></button>
+            <button class="mini-btn loop-btn" id="miniLoop"><i class="fas fa-repeat"></i></button>
+            <a href="#" id="miniDownload" class="mini-btn" download><i class="fas fa-download"></i></a>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
